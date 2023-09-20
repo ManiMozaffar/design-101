@@ -1,6 +1,6 @@
 class Vehicle:
     def move(self):
-        pass
+        raise NotImplementedError
 
 
 class Car(Vehicle):

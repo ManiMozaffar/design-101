@@ -1,4 +1,4 @@
-class LibraryBook:
+class E_LibraryBook:
     def __init__(self, title: str, author: str, pages: int):
         self.title = title
         self.author = author

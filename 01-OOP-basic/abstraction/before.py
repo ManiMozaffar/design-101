@@ -12,7 +12,10 @@ class Book:
         self.isbn = isbn
 
     def checkout(self, reader: str):
-        self.current_reader = reader
+        if self.current_reader:
+            self.current_reader = reader
+        else:
+            raise Exception("Can't checkout because book is not retail")
 
     def return_book(self):
         self.current_reader = None
