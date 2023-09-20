@@ -1,3 +1,6 @@
+DATABASE = {}
+
+
 class Pet:
     def __init__(self, name: str, gender: str, age: int, color: str):
         self.name = name
@@ -14,8 +17,19 @@ class Pet:
     def move(self) -> str:
         return "Moving around."
 
+    def make_sound(self) -> str:
+        raise NotImplementedError
+
+    def record_sound(self):
+        result = self.make_sound()
+        DATABASE[self.name] = result
+
 
 class Dog(Pet):
+    def __init__(self, name: str, gender: str, age: int, color: str, owner: str):
+        super(Dog, self).__init__(name, gender, age, color)
+        self.owner = owner
+
     def make_sound(self) -> str:
         return "Woof"
 
@@ -25,7 +39,7 @@ class Cat(Pet):
         return "Meow"
 
 
-sparky = Dog(name="Sparky", gender="Male", age=2, color="Brown")
+sparky = Dog(name="Sparky", gender="Male", age=2, color="Brown", owner="Mani")
 print(sparky.breathe())  # Output: "Inhale, exhale."
 print(sparky.make_sound())  # Output: "Woof"
 

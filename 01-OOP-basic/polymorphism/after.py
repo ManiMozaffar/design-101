@@ -1,0 +1,19 @@
+class Vehicle:
+    def move(self):
+        pass
+
+
+class Car(Vehicle):
+    def move(self):
+        return "Vroom!"
+
+
+class Boat(Vehicle):
+    def move(self):
+        return "Splash!"
+
+
+vehicles: list[Vehicle] = [Car(), Boat()]
+
+for vehicle in vehicles:
+    print(vehicle.move())
