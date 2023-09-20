@@ -20,11 +20,12 @@ A class hierarchy is an arrangement of classes in a tree-like structure, where e
 ### Definition
 Inheritance is a mechanism in OOP that allows a class to inherit attributes and methods from another class. The derived class can override or extend the functionalities of the base class. This promotes code reusability and can be used to implement elegant software designs.
 
-
-Animal
-|-- Mammal
-    |-- Human
-    |-- Dog
-|-- Bird
-    |-- Owl
-    |-- Chicken
+```
+|-- Animal
+    |-- Mammal
+        |-- Human
+        |-- Dog
+    |-- Bird
+        |-- Owl
+        |-- Chicken
+```
