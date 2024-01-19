@@ -31,6 +31,21 @@ def process_order():
     if order.status != old_status:
         print(f"Status has changed to {order.status}")
 
+    old_status = order.status
+    order.status = Status.PREPARING
+    if order.status != old_status:
+        print(f"Status has changed to {order.status}")
+
+    old_status = order.status
+    order.status = Status.DISPATCHED
+    if order.status != old_status:
+        print(f"Status has changed to {order.status}")
+
+    old_status = order.status
+    order.status = Status.DELIVERED
+    if order.status != old_status:
+        print(f"Status has changed to {order.status}")
+
 
 if __name__ == "__main__":
     process_order()
