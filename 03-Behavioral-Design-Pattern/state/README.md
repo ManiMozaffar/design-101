@@ -42,6 +42,5 @@ Cons:
 
 - If a system has only a few states or doesn't change states frequently, implementing the State pattern can be an overkill.
 - The number of classes increases as new states are added, potentially leading to a proliferation of classes.
-- It still need parsing to get the current state of the context, and might introduce bugs when state switching edge cases hasn't been handled correctly
 
 The State Pattern provides a robust and flexible structure for managing state-related behavior in a system, enhancing code maintainability and extensibility. It's particularly useful in complex systems where objects undergo frequent state transitions, and each state entails distinct behavior.

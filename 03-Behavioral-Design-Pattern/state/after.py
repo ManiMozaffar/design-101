@@ -48,8 +48,8 @@ class RejectedState(State):
 
 
 class Document:
-    def __init__(self):
-        self.state: State = DraftState()
+    def __init__(self, state: State):
+        self.state: State = state
 
     def next(self):
         self.state.next(self)
@@ -60,7 +60,7 @@ class Document:
 
 # Usage
 if __name__ == "__main__":
-    document = Document()
+    document = Document(DraftState())
     document.next()  # Sent for moderation
     document.reject()  # Rejected
     document.next()  # Cannot change state
