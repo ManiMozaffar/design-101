@@ -11,7 +11,7 @@ def is_valid_email(email: str) -> bool:
     """
     Validate the email address using a regular expression.
     """
-    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    pattern = r"/^[a-zA-Z0-9. _-]+@[a-zA-Z0-9. -]+\. [a-zA-Z]{2,4}$/"
     return re.match(pattern, email) is not None
 
 

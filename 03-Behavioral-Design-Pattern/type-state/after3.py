@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 
 class EmailString(str):
     def __new__(cls, value):
-        pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        pattern = r"/^[a-zA-Z0-9. _-]+@[a-zA-Z0-9. -]+\. [a-zA-Z]{2,4}$/"
         if re.match(pattern, value) is not None:
             raise ValueError("Invalid email address")
         return str.__new__(cls, value)
@@ -53,7 +53,6 @@ def main():
     sender_address = EmailString("test@example.com")
     smtp_addr = "127.0.0.1"
     password = "Test12345"
-
     client = MailClient(sender_address, smtp_addr, password)
     emails = [
         client.build_email_body(
