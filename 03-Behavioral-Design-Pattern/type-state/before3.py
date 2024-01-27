@@ -3,9 +3,6 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-import firebase_admin
-from firebase_admin import storage
-
 
 def is_valid_email(email: str) -> bool:
     """
@@ -13,15 +10,6 @@ def is_valid_email(email: str) -> bool:
     """
     pattern = r"/^[a-zA-Z0-9. _-]+@[a-zA-Z0-9. -]+\. [a-zA-Z]{2,4}$/"
     return re.match(pattern, email) is not None
-
-
-def initialize_app(cred):
-    return firebase_admin.initialize_app(cred)
-
-
-def get_bucket_path(bucket_name: str) -> str:
-    bucket = storage.bucket(bucket_name)
-    return bucket.path
 
 
 def send_email(

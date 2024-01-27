@@ -49,6 +49,11 @@ class MailClient:
         return EmailMIMEMultipart(title, self.sender_address, rec_addr, content)
 
 
+def send_email(client: MailClient, rec_addr: EmailString, title: str, content: str):
+    email = client.build_email_body(title, content, rec_addr)
+    client.send_emails([email])
+
+
 def main():
     sender_address = EmailString("test@example.com")
     smtp_addr = "127.0.0.1"
